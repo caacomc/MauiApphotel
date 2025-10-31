@@ -1,20 +1,22 @@
-﻿namespace MauiApphotel
+﻿using MauiApphotel.Views;
+
+namespace MauiApphotel;
+
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            var window = base.CreateWindow(activationState);
+        MainPage = new NavigationPage(new ContratacaodaHospedagem());
+    }
+    protected override Window CreateWindow(IActivationState? activationState)
+    {
+        var window = base.CreateWindow(activationState);
 
-            window.Width = 400;
-            window.Height = 600;
+        window.Width = 400;
+        window.Height = 600;
 
-            return window;
-        }
+        return window;
     }
 }

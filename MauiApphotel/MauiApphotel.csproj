@@ -57,8 +57,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="DadosSobre.cs" />
+	  <Compile Remove="Views\contratacaohospedagem.xaml.cs" />
+	  <Compile Remove="Views\NewPage1.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Views\contratacaohospedagem.xaml" />
+	  <MauiXaml Remove="Views\NewPage1.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-rc.1.25451.107" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\ContratacaodaHospedagem.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\HospedagemContratada.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Sobre.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>
