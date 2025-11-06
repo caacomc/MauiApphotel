@@ -24,10 +24,10 @@
 
             <!-- Sombra correta -->
             <Border.Shadow>
-                <Shadow Brush="Black"
-                        Opacity="0.25"
-                        Radius="10"
-                        Offset="5,5" />
+                <Shadow Brush="White"
+                        Opacity="0.10"
+                        Radius="5"
+                        Offset="3,0" />
             </Border.Shadow>
 
             <VerticalStackLayout Spacing="15">

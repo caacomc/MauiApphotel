@@ -14,8 +14,8 @@
                HorizontalTextAlignment="Center"/>
 
         <Frame Margin="10">
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="5">
+                <HorizontalStackLayout Spacing="5">
                     <Label Text="Adultos: " />
                     <Label Text="2"
                            TextColor="{StaticResource MidnightBlue}" />
