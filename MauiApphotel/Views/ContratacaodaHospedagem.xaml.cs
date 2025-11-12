@@ -1,4 +1,6 @@
-﻿namespace MauiApphotel.Views;
+﻿using MauiApphotel.Models;
+
+namespace MauiApphotel.Views;
 
 public partial class ContratacaodaHospedagem : ContentPage
 {
@@ -14,7 +16,6 @@ public partial class ContratacaodaHospedagem : ContentPage
         dtpck_checkin.MinimumDate = DateTime.Now;
         dtpck_checkin.MaximumDate = DateTime.Now.AddMonths(1);
 
-        // ✅ Conversão segura de DateTime? para DateTime
         DateTime checkinDate = dtpck_checkin.Date.GetValueOrDefault(DateTime.Now);
 
         dtpck_checkout.MinimumDate = checkinDate.AddDays(1);
@@ -34,7 +35,21 @@ public partial class ContratacaodaHospedagem : ContentPage
     {
         try
         {
-            await Navigation.PushAsync(new HospedagemContratada());
+            Hospedagem h = new Hospedagem
+            {
+                QuartoSelecionado = (Quarto)pck_quarto.SelectedItem,
+                QntAdultos = Convert.ToInt32(stp_adultos.Value),
+                QntCriancas = Convert.ToInt32(stp_criancas.Value),
+                DataCheckIn = (DateTime)dtpck_checkin.Date,
+                DataCheckOut = (DateTime)dtpck_checkout.Date,
+            };
+
+
+
+            await Navigation.PushAsync(new HospedagemContratada()
+            {
+                BindingContext = h
+            });
         }
         catch (Exception ex)
         {

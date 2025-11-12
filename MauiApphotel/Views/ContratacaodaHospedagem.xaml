@@ -10,29 +10,25 @@
                          Padding="30"
                          Spacing="20">
 
-        <!-- Título -->
         <Label Text="Cálculo da Diária"
                FontFamily="StoryScript-Regular"
                FontSize="50"
                HorizontalOptions="Center"
                TextColor="{StaticResource PrimaryDarkText}" />
 
-        <!-- Seção principal -->
         <Border StrokeShape="RoundRectangle 20"
                 BackgroundColor="White"
                 Padding="15">
 
-            <!-- Sombra correta -->
             <Border.Shadow>
-                <Shadow Brush="White"
-                        Opacity="0.10"
+                <Shadow Brush="Black"
+                        Opacity="0.2"
                         Radius="5"
                         Offset="3,0" />
             </Border.Shadow>
 
             <VerticalStackLayout Spacing="15">
 
-                <!-- Grid de adultos e crianças -->
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*"
                       ColumnSpacing="10"
@@ -69,17 +65,22 @@
                              Increment="1" />
                 </Grid>
 
-                <!-- Picker de suíte -->
-                <Label Text="Escolha sua Suíte"
-                       FontAttributes="Bold" />
-
-                <Picker x:Name="pck_quarto"
-                        Title="Selecione sua acomodação"
-                        ItemDisplayBinding="{Binding Descricao}"/>
-
-                <!-- Período da estadia -->
                 <Border Margin="10">
+                    <VerticalStackLayout>
+                        <Label Text="Escolha sua Suíte"
+                               FontAttributes="Bold" />
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua acomodação"
+                                ItemDisplayBinding="{Binding Descricao}" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border Margin="10"
+                        Padding="10"
+                        BackgroundColor="{StaticResource Gray100}">
                     <VerticalStackLayout Spacing="10">
+
                         <Label Text="Período da Estadia"
                                FontAttributes="Bold" />
 
@@ -97,7 +98,6 @@
                     </VerticalStackLayout>
                 </Border>
 
-                <!-- Botão -->
                 <Button Text="Avançar"
                         Clicked="Button_Clicked"
                         HorizontalOptions="Center"
